@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FDF3F1">
+  <meta name="color-scheme" content="only light">
+  <title>A little question ♡</title>
+  <meta name="description" content="I have something to ask you.">
+  <meta property="og:title" content="A little question for you ♡">
+  <meta property="og:description" content="I have something to ask you.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23E7869A' d='M16 28s-11-6.6-11-15a6 6 0 0 1 11-3.3A6 6 0 0 1 27 13c0 8.4-11 15-11 15z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=DM+Sans:opsz,wght@9..40,400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="petals" aria-hidden="true"></div>
+
+  <main class="card">
+    <header class="topbar">
+      <button class="back" id="back" type="button" aria-label="Go back" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <ol class="progress" id="progress" aria-label="Progress" hidden>
+        <li></li><li></li><li></li><li></li>
+      </ol>
+    </header>
+
+    <!-- 1 · The question -->
+    <section class="screen is-active" data-screen="ask">
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M32 52S12 40.2 12 25.5A10.5 10.5 0 0 1 32 19.6a10.5 10.5 0 0 1 20 5.9C52 40.2 32 52 32 52z"/></svg>
+      </div>
+      <p class="eyebrow">A little question</p>
+      <h1 class="title">Will you go on a date <em>with&nbsp;me?</em></h1>
+
+      <div class="ask-actions">
+        <button class="btn btn-yes" id="yes" type="button">Yes, I will <span aria-hidden="true">♡</span></button>
+        <div class="no-slot">
+          <button class="btn btn-no" id="no" type="button">No</button>
+        </div>
+        <p class="tease" id="tease" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- 2 · Date -->
+    <section class="screen" data-screen="date">
+      <p class="eyebrow">Step 1 of 4</p>
+      <h2 class="title">Pick our <em>day</em></h2>
+      <p class="lede">Which afternoon should I save for you?</p>
+      <div class="grid grid-2">
+        <button class="choice tile" type="button" data-key="date" data-value="3rd Oct 2026 (Saturday)" aria-pressed="false">
+          <span class="tile-month">October</span>
+          <span class="tile-day">3</span>
+          <span class="tile-week">Saturday</span>
+          <span class="check" aria-hidden="true"></span>
+        </button>
+        <button class="choice tile" type="button" data-key="date" data-value="4th Oct 2026 (Sunday)" aria-pressed="false">
+          <span class="tile-month">October</span>
+          <span class="tile-day">4</span>
+          <span class="tile-week">Sunday</span>
+          <span class="check" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 3 · Time -->
+    <section class="screen" data-screen="time">
+      <p class="eyebrow">Step 2 of 4</p>
+      <h2 class="title">Pick a <em>time</em></h2>
+      <p class="lede">A little afternoon escape sounds nice.</p>
+      <div class="grid grid-2">
+        <button class="choice slot" type="button" data-key="time" data-value="1:00 PM – 2:00 PM" aria-pressed="false">
+          <span class="slot-start">1:00 <small>PM</small></span><span class="slot-end">until 2:00 PM</span><span class="check" aria-hidden="true"></span>
+        </button>
+        <button class="choice slot" type="button" data-key="time" data-value="2:00 PM – 3:00 PM" aria-pressed="false">
+          <span class="slot-start">2:00 <small>PM</small></span><span class="slot-end">until 3:00 PM</span><span class="check" aria-hidden="true"></span>
+        </button>
+        <button class="choice slot" type="button" data-key="time" data-value="3:00 PM – 4:00 PM" aria-pressed="false">
+          <span class="slot-start">3:00 <small>PM</small></span><span class="slot-end">until 4:00 PM</span><span class="check" aria-hidden="true"></span>
+        </button>
+        <button class="choice slot" type="button" data-key="time" data-value="4:00 PM – 5:00 PM" aria-pressed="false">
+          <span class="slot-start">4:00 <small>PM</small></span><span class="slot-end">until 5:00 PM</span><span class="check" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 4 · Venue -->
+    <section class="screen" data-screen="place">
+      <p class="eyebrow">Step 3 of 4</p>
+      <h2 class="title">Where shall <em>we go?</em></h2>
+      <p class="lede">You get a say in this one. 😌</p>
+      <div class="stack">
+        <button class="choice row" type="button" data-key="place" data-value="Lemon Tree" aria-pressed="false">
+          <span class="row-icon" aria-hidden="true">🍋</span>
+          <span class="row-text"><span class="row-title">Lemon Tree</span><span class="row-sub">I have a feeling this could be cute.</span></span>
+          <span class="check" aria-hidden="true"></span>
+        </button>
+        <button class="choice row" type="button" data-key="place" data-value="Your Choice" aria-pressed="false">
+          <span class="row-icon" aria-hidden="true">✨</span>
+          <span class="row-text"><span class="row-title">Your Choice</span><span class="row-sub">You pick, I’ll happily follow.</span></span>
+          <span class="check" aria-hidden="true"></span>
+        </button>
+        <form class="own-venue" id="own-venue" hidden novalidate>
+          <label for="venue-input">Where would you like to go?</label>
+          <input id="venue-input" name="venue" type="text" maxlength="80" autocomplete="off" autocapitalize="words" enterkeyhint="done" placeholder="That little café you love…">
+          <button class="btn btn-go" type="submit" disabled>Continue <span aria-hidden="true">♡</span></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 5 · Lunch -->
+    <section class="screen" data-screen="lunch">
+      <p class="eyebrow">Step 4 of 4</p>
+      <h2 class="title">And what shall <em>we have?</em></h2>
+      <p class="lede">Because every good date needs good food.</p>
+      <div class="stack stack-tight">
+        <button class="choice row" type="button" data-key="lunch" data-value="Italian" aria-pressed="false">
+          <span class="row-icon" aria-hidden="true">🍝</span><span class="row-text"><span class="row-title">Italian</span></span><span class="check" aria-hidden="true"></span>
+        </button>
+        <button class="choice row" type="button" data-key="lunch" data-value="Chinese" aria-pressed="false">
+          <span class="row-icon" aria-hidden="true">🥢</span><span class="row-text"><span class="row-title">Chinese</span></span><span class="check" aria-hidden="true"></span>
+        </button>
+        <button class="choice row" type="button" data-key="lunch" data-value="Indian" aria-pressed="false">
+          <span class="row-icon" aria-hidden="true">🍛</span><span class="row-text"><span class="row-title">Indian</span></span><span class="check" aria-hidden="true"></span>
+        </button>
+        <button class="choice row" type="button" data-key="lunch" data-value="Just Coffee" aria-pressed="false">
+          <span class="row-icon" aria-hidden="true">☕</span><span class="row-text"><span class="row-title">Just Coffee</span></span><span class="check" aria-hidden="true"></span>
+        </button>
+        <button class="choice row" type="button" data-key="lunch" data-value="Surprise me" aria-pressed="false">
+          <span class="row-icon" aria-hidden="true">🎁</span><span class="row-text"><span class="row-title">Surprise me</span></span><span class="check" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 6 · It's a date -->
+    <section class="screen" data-screen="done">
+      <div class="seal seal-lg reveal" style="--i:0" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M32 52S12 40.2 12 25.5A10.5 10.5 0 0 1 32 19.6a10.5 10.5 0 0 1 20 5.9C52 40.2 32 52 32 52z"/></svg>
+      </div>
+      <h2 class="title reveal" style="--i:1">Okay, it’s a <em>date</em> ♡</h2>
+
+      <article class="plan reveal" style="--i:2">
+        <p class="plan-head">Our little plan</p>
+        <dl>
+          <div class="reveal" style="--i:3"><dt>Date</dt><dd data-out="date"></dd></div>
+          <div class="reveal" style="--i:4"><dt>Time</dt><dd data-out="time"></dd></div>
+          <div class="reveal" style="--i:5"><dt>Place</dt><dd data-out="place"></dd></div>
+          <div class="reveal" style="--i:6"><dt>Lunch</dt><dd data-out="lunch"></dd></div>
+        </dl>
+      </article>
+
+      <p class="closing reveal" style="--i:7">See you there. ❤️</p>
+      <p class="note reveal" style="--i:8">I’m really looking forward to spending some time with you.</p>
+      <p class="signature reveal" style="--i:9">— Vaibhav</p>
+
+      <button class="link reveal" style="--i:10" id="restart" type="button">change something</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
